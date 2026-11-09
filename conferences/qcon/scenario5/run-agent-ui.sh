@@ -29,6 +29,7 @@ fi
 echo "🐳 Starting container..."
 docker run -d \
   --name $CONTAINER_NAME \
+  --add-host=host.docker.internal:host-gateway \
   -p $PORT:80 \
   -e A2A_URL=$A2A_URL \
   $IMAGE
